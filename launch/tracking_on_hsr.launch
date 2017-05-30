@@ -1,0 +1,19 @@
+<launch>
+    <!-- Detectors -->
+    <include file="$(find spencer_hsr)/launch/detectors/front_rgbd_detectors.launch"/>
+    <include file="$(find spencer_hsr)/launch/detectors/laser_detectors.launch"/>
+
+    <!-- People tracking -->
+    <include file="$(find spencer_hsr)/launch/tracking/freiburg_people_tracking.launch">
+        <arg name="rgbd" default="true"/>
+        <arg name="static_map_filter" default="false"/>
+        <arg name="laser_low_confidence_detections" default="true"/>
+    </include>
+
+    <!-- Group tracking -->
+    <include file="$(find spencer_hsr)/launch/tracking/group_tracking.launch"/>
+
+    <!-- Set up dummy transforms into an imaginary robot and odom frame -->
+    <!-- <node name="tf_base_footprint" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 base_link base_footprint 10"/> -->
+
+</launch>

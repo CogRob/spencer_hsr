@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package>
+
+  <name>spencer_hsr</name>
+  <version>1.0.0</version>
+  <description>
+    Launch files for SPENCER on the hsr robot platform
+  </description>
+
+  <maintainer email="roxfoxpox@gmail.com">Ruffin White</maintainer>
+  <license>BSD</license>
+
+  <author email="roxfoxpox@gmail.com">Ruffin White</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>spencer_people_tracking_launch</run_depend>
+  <run_depend>spencer_tracking_rviz_plugin</run_depend>
+  <run_depend>srl_nearest_neighbor_tracker</run_depend>
+  <run_depend>spencer_detected_person_association</run_depend>
+  <run_depend>jsk_rviz_plugins</run_depend>
+
+</package>
