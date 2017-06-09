@@ -10,6 +10,9 @@
         <arg name="laser_low_confidence_detections" default="true"/>
     </include>
 
+    <!-- People classifying -->
+    <include file="$(find spencer_hsr)/launch/classifiers/openface_classifier.launch"/>
+
     <!-- Group tracking -->
     <include file="$(find spencer_hsr)/launch/tracking/group_tracking.launch"/>
 
