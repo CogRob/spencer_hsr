@@ -25,7 +25,7 @@
 
     <!-- Re-publish detections as syncronized track, for processing by the classifier-->
     <group ns="/spencer/classification_internal/classified_tracks">
-        <node name="face_embedder" type="face_embedder_node.py" pkg="openface_classifier">
+        <node name="face_embedder" type="face_embedder_node.py" pkg="openface_classifier" output="screen">
             <param name="dlib_model_path" value="$(arg dlib_model_path)" type="string"/>
             <param name="openface_model_path" value="$(arg openface_model_path)" type="string"/>
 
@@ -36,7 +36,7 @@
         </node>
 
 
-        <node name="classifier" type="classifier_node.py" pkg="openface_classifier">
+        <node name="classifier" type="classifier_node.py" pkg="openface_classifier" output="screen">
             <param name="classifier_path" value="$(arg classifier_path)" type="string"/>
             <param name="feature_path" value="$(arg feature_path)" type="string"/>
 
@@ -54,12 +54,12 @@
             <param name="embeddings_topic" value="embeddings" type="string"/>
         </node>
 
-        <node name="call_person" type="call_person_by_name.py" pkg="openface_classifier">
+       <!-- <node name="call_person" type="call_person_by_name.py" pkg="openface_classifier">
             <param name="labeled_tracks_topic" value="labeled_tracks" type="string"/>
             <param name="call_person_topic" value="call_person" type="string"/>
-        </node>
+        </node> -->
 
-        <node name="label_pose_service" type="label_pose_service_node.py" pkg="openface_classifier" output="screen">
+        <node name="label_pose_service" type="label_pose_service_node.py" pkg="openface_classifier">
             <param name="labeled_tracks_topic" value="labeled_tracks" type="string"/>
             <param name="tracks_with_pose_topic" value="$(arg tracks_with_pose_topic)" type="string"/>
         </node>
